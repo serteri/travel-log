@@ -1,6 +1,6 @@
 import React, {useState , useEffect} from 'react'
 
-const LoginForm = (props)=>{
+export function LoginForm (props){
     const [enteredEmail,setEnteredEmail]= useState('')
     const [enteredPassword,setEnteredPassword]= useState('')
     const [formIsValid, setFormIsValid] = useState(false);
