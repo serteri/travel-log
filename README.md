@@ -1,7 +1,7 @@
 # Travelog App
 
 
-## R1:: Description of your website, including purpose, functionality/features, target audience, tech stack. 
+## R1: Description of your website, including purpose, functionality/features, target audience, tech stack. 
 
 Welcome to Serter and Duncan’s Travelog.
 
@@ -131,9 +131,54 @@ The User stories set out below will hopefully illustrate for you some features o
 **Then** I should be able to browse and view travel experiences and recommendations related to these destinations.  
 
 ## R5: Wireframes  
+**Homepage**  
+
+![Homepage wireframe](<images/Homepage - all views.png>)  
+  
+  **About Page**  
+
+  ![About Page wireframes](<images/About Page - all views.png>)  
+    
+**Login Page**
+    
+ ![Login Page Wireframes](<images/Login Page-all views.png>)  
+
+ **New User Registration**  
+
+![Signup page wireframes](<images/New User register Page-all views.png>)  
+
+**User Profile Page**  
+
+![user profile page wireframes](<images/User profile Page-all views.png>)  
+  
+**Create New Post**  
+
+![new post wireframes](<images/Create New Post - all views.png>)  
+  
+**Edit Post**  
+
+![edit post page wireframes](<images/Edit Post - all views.png>)  
+  
+**Delete Post**  
+
+![delete post page wireframes](<images/Delete Post - all views.png>)  
+  
+**Location Page**   
+
+![location page wireframes](<images/Location page - all views .png>)  
 
 ## R6: Trello Board  
 
-**Link:** https://trello.com/invite/b/EJz76VMb/ATTIe595943cc6c2f9207d5d6b8d9cac59a0E97553E8/travel-log-app
+**Link:** https://trello.com/invite/b/EJz76VMb/ATTIe595943cc6c2f9207d5d6b8d9cac59a0E97553E8/travel-log-app  
+  
+**Early stages of part A:**
 
+![Trello board](<images/Trello 2.png>)  
 
+**Further tasks complete, others to discuss in scheduled call:** 
+
+![Trello board](<images/Trello 3.png>)  
+  
+**Close to completion of part A:**  
+
+![Trello board](<images/Trello 4.png>)
