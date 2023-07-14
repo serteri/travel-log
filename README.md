@@ -133,39 +133,39 @@ The User stories set out below will hopefully illustrate for you some features o
 ## R5: Wireframes  
 **Homepage**  
 
-![Homepage wireframe](<images/Homepage - all views.png>)  
+![Homepage wireframe](images%2FHomepage%20-%20all%20views.png)
   
   **About Page**  
-
-  ![About Page wireframes](<images/About Page - all views.png>)  
+![About Page - all views.png](images%2FAbout%20Page%20-%20all%20views.png)
+    
     
 **Login Page**
     
- ![Login Page Wireframes](<images/Login Page-all views.png>)  
+ ![Login Page-all views.png](images%2FLogin%20Page-all%20views.png)
 
  **New User Registration**  
 
-![Signup page wireframes](<images/New User register Page-all views.png>)  
+![New User register Page-all views.png](images%2FNew%20User%20register%20Page-all%20views.png)
 
 **User Profile Page**  
 
-![user profile page wireframes](<images/User profile Page-all views.png>)  
+![User profile Page-all views.png](images%2FUser%20profile%20Page-all%20views.png)
   
 **Create New Post**  
 
-![new post wireframes](<images/Create New Post - all views.png>)  
+![Create New Post - all views.png](images%2FCreate%20New%20Post%20-%20all%20views.png)
   
 **Edit Post**  
 
-![edit post page wireframes](<images/Edit Post - all views.png>)  
+![Edit Post - all views.png](images%2FEdit%20Post%20-%20all%20views.png)
   
 **Delete Post**  
 
-![delete post page wireframes](<images/Delete Post - all views.png>)  
+![Delete Post - all views.png](images%2FDelete%20Post%20-%20all%20views.png)
   
 **Location Page**   
 
-![location page wireframes](<images/Location page - all views .png>)  
+![Location page - all views .png](images%2FLocation%20page%20-%20all%20views%20.png)
 
 ## R6: Trello Board  
 
