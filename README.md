@@ -36,11 +36,11 @@ Beyond the tech advantages though, as budding developers, we found the MERN stac
   
 ## R2: Dataflow Diagram  
 
-![Travelog app data flow diagram](<images/Data Flow.png>)
+![Travelog app data flow diagram](images%2FTravel_log_app.drawio.png)
 
 ## R3: Application Architecture Diagram
   
-![Travelog App Architecture diagram](<images/Application Architecture Diagram.png>)  
+![Travelog App Architecture diagram](images%2FTravel-Log_Application%20Architecture%20Diagram.drawio.png)
 
 ## R4: User Stories
 
