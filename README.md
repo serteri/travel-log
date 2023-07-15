@@ -1,5 +1,11 @@
 # Travelog App
 
+## Video Presentations: 
+**Part 1: Intro, user stories and wireframes:**  
+
+https://youtu.be/PhBlVR01rfM  
+(Please excuse noise of my young son playing in the background!)
+
 
 ## R1: Description of your website, including purpose, functionality/features, target audience, tech stack. 
 
