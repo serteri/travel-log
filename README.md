@@ -1,5 +1,9 @@
 # Travelog App
+Presentations:
 
+## Serter Iyigunlu presentation:
+
+I added my presentation : https://youtu.be/Ols0jTex2RE
 
 ## R1: Description of your website, including purpose, functionality/features, target audience, tech stack. 
 
