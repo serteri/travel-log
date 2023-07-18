@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { NavBar } from './components/Navbar/Navbar';
 import {HomePage} from './components/HomePage/HomePage'
+import {Footer} from './components/Footer/Footer';
+import "./App.css"
 function App() {
   return (
-      <div>
+      <div className='App'>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -14,6 +16,7 @@ function App() {
             {/*  <Route path="contact" element={<ContactPage />} />*/}
             {/*</Route>*/}
           </Routes>
+            <Footer />
         </BrowserRouter>
       </div>
   );
