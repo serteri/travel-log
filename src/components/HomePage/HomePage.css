@@ -1,9 +1,13 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 
 
 
-
-@media (max-width: 568px) {
+@media (max-width: 428px) {
 
     .travel{
         text-align: center;
