@@ -6,28 +6,28 @@
 
 
 
-
 @media (max-width: 428px) {
 
     .travel{
         text-align: center;
         margin-top: 2rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
-.second-part{
+.button_login{
+    background-color: antiquewhite;
+    border-radius: 6px;
+    width: 5rem;
 
 }
-.description{
-
-
-}
-.image{
-
-
-
+.button_login:hover{
+    background-color: darkorange;
 }
 
 .social{
-    margin-top:4rem
+    margin-top:1.3rem
+}
+
+.button{
+    margin-right: 2rem;
 }
 }

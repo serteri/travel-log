@@ -1,0 +1,71 @@
+nav{
+    height: 3rem;
+}
+.navbars{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-brands{
+    text-decoration: none;
+    color: darkorange;
+    font-size:2rem;
+}
+
+.navbar_list{
+    list-style: none;
+}
+
+.navbar_list_items{
+    display: flex;
+
+}
+
+.nav-items{
+    font-size: 1rem;
+    margin-right: 3rem;
+}
+
+.nav_search{
+    height: 1rem;
+    width:4rem;
+}
+.nav_search::placeholder{font-size: .8rem}
+
+
+@media (max-width: 428px){
+    nav{
+        height: 1rem;
+    }
+    .navbars{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navbar-brands{
+        text-decoration: none;
+        color: darkorange;
+        font-size: .9rem;
+    }
+
+    .navbar_list{
+        list-style: none;
+    }
+
+    .navbar_list_items{
+        display: flex;
+
+    }
+
+    .nav-items{
+        font-size: .4rem;
+        margin-right: 1rem;
+    }
+
+    .nav_search{
+        height: .5rem;
+        width:1.9rem;
+    }
+    .nav_search::placeholder{font-size: .3rem}
+
+
+}
+

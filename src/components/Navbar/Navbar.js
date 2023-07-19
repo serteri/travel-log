@@ -1,21 +1,22 @@
 import {BrowserRouter, NavLink} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.css';
-
+import './Navbar.css'
 export function  NavBar (){
-    let activeNavStyle = {
-        textDecorationColor: "green",
-        textDecorationLine: "line-through"
-    }
-    return(
-      <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-          <div className="container-fluid">
-              <NavLink className='navbar-brand ' id="navbarNav" to="/" style={({isActive}) => isActive ? activeNavStyle:undefined}>Logo</NavLink>
-              <div>
-                  <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                      <li className="nav-item "><NavLink className='nav-link active' to="/">Home</NavLink></li>
-                      <li className="nav-item "><NavLink className='nav-link' to="/about">About</NavLink></li>
-                      <li className="nav-item"><NavLink className='nav-link' to="/login">Login</NavLink></li>
+    return(
+      <nav>
+          <div className="navbars">
+              <div>
+                  <NavLink className='navbar-brands' to="/">Logo</NavLink>
+              </div>
+
+              <div>
+                  <ul className="navbar_list_items navbar_list">
+
+                      <li className="nav-items "><NavLink className='nav-link' to="/">Home</NavLink></li>
+                      <li className="nav-items "><NavLink className='nav-link' to="/about">About</NavLink></li>
+                      <li className="nav-items"><NavLink className='nav-link' to="/login">Login</NavLink></li>
+                      <li className="nav-items"><input className="nav_search" type="search" placeholder="Search"/> </li>
                   </ul>
               </div>
 
