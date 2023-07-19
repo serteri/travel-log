@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { NavBar } from './components/Navbar/Navbar';
 import {HomePage} from './components/HomePage/HomePage'
 import {Footer} from './components/Footer/Footer';
+import {LoginForm} from './components/LoginForm/LoginForm';
 import "./App.css"
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            {/*<Route path="/projects" element={<Projects />}/>*/}
+            <Route path="/login" element={<LoginForm />}/>
             {/*<Route path="/about" element={<Outlet />}>*/}
             {/*  <Route index element={<AboutPage />} />*/}
             {/*  <Route path="contact" element={<ContactPage />} />*/}

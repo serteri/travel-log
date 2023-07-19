@@ -1,6 +1,15 @@
-import React, {useState , useEffect} from 'react'
+import React, {useState , useEffect} from 'react';
+import {useNavigate} from "react-router-dom";
+import './LoginForm.css'
 
 export function LoginForm (props){
+
+    const navigate = useNavigate();
+    const navigatetoRegister = ()=>{
+        //navigate to /login
+        navigate('/register');
+
+    }
     const [enteredEmail,setEnteredEmail]= useState('')
     const [enteredPassword,setEnteredPassword]= useState('')
     const [formIsValid, setFormIsValid] = useState(false);
@@ -24,14 +33,30 @@ const submitForm = (e) => {
         e.preventDefault();
 
 }
+const resetForm = (e) => {
+        setEnteredEmail('');
+    setEnteredPassword('');
+
+}
     return(
-        <div>
-            <form onSubmit={submitForm}>
-                <label>Email address:</label>
-                <input type="text" name="name" value={enteredEmail} onChange={emailChangeHandler}/>
-                <label>Password:</label>
-                <input type="password" name="password" value={enteredPassword} onChange={passwordChangeHAndler}/>
+        <div className="form-element" >
+            <form className="login-form"  onSubmit={submitForm}>
+                <div className="form_elements">
+                    <label className="labels">Email address:</label>
+                    <input className="inputs" type="text" name="name" value={enteredEmail} onChange={emailChangeHandler} required />
+                </div>
+                <div className="form_elements">
+                    <label className="labels">Password:</label>
+                    <input className="inputs" type="password" name="password" value={enteredPassword} onChange={passwordChangeHAndler} required/>
+                </div>
+                <div className="buttons">
+                    <button type="submit" className="button-submit">Log In</button>
+                    <button type="reset" onClick={resetForm}>Reset</button>
+
+                </div>
+
             </form>
+            <button onClick={navigatetoRegister} className="button-register">Register</button>
         </div>
 
         )
