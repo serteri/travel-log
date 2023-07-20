@@ -3,6 +3,7 @@ import { NavBar } from './components/Navbar/Navbar';
 import {HomePage} from './components/HomePage/HomePage'
 import {Footer} from './components/Footer/Footer';
 import {LoginForm} from './components/LoginForm/LoginForm';
+import {About} from './components/About/AboutUs';
 import "./App.css"
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginForm />}/>
+              <Route path="/about" element={<About />}/>
             {/*<Route path="/about" element={<Outlet />}>*/}
             {/*  <Route index element={<AboutPage />} />*/}
             {/*  <Route path="contact" element={<ContactPage />} />*/}
