@@ -36,7 +36,12 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-
+const rolesController = require("./controllers/RoleRoutes");
+app.use("/roles", rolesController);
+const usersController = require("./controllers/UserRoutes");
+app.use("/users", usersController);
+const postsController = require("./controllers/PostRoutes");
+app.use("/posts", postsController);
 const mongoose = require('mongoose');
 var databaseURL = "";
 switch (process.env.NODE_ENV.toLowerCase()) {
@@ -85,9 +90,6 @@ app.get('/', (request, response) => {
         message:"Hello world!"
     });
 });
-
-
-
 
 // Keep this route at the end of this file, only before the module.exports!
 // A 404 route should only trigger if no preceding routes or middleware was run. 
