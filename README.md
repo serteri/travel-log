@@ -43,65 +43,7 @@ Travel Enthusiasts: Individuals who have a deep passion for travel and are alway
 
 - Trip Planners: Individuals who appreciate having a comprehensive platform for gathering information, evaluating destinations, and planning their trips effectively. They rely on features like cost assessments, local insights, must-visit recommendations, and transportation options to create personalized itineraries.
 
-- Photography Enthusiasts: Travelers who love capturing and sharing their travel experiences through photography. They value features that allow them to showcase their images and visually communicate the beauty and essence of the destinations they visit.
-
-- Cultural Explorers: People who have a deep interest in learning about different cultures, traditions, and local heritages. They seek travel experiences that provide insights into the history, art, cuisine, and lifestyle of the places they visit.
-**Tech Stack**
-
-Serter and I will use the MERN stack to create our Travelog app. MERN comprises MongoDB, Express.js, React.js, and Node.js -  four powerful, open-source components that provide a complete end-to-end framework for developers.
-
-Our decision to use the MERN stack was not only guided by it being a central part of our bootcamp curriculum, but also by the significant advantages it offers. Being a full JavaScript stack, MERN facilitates seamless development across both client and server sides, which should assist us achieve improved efficiency and consistency in our application. MongoDB, a NoSQL database, supports flexible and scalable data management. Express.js streamlines server-side coding, and Node.js provides a robust environment for server-side JavaScript execution, which should mean our app is both fast and scalable. Furthermore, React.js, known for its component-based architecture and efficient rendering which will  allow us to create a user-friendly, efficient interface that helps users enjoy a positive user experience.
-
-Beyond the tech advantages though, as budding developers, we found the MERN stack to be particularly approachable. Its open-source nature and the strong backing from a vast community offer an array of benefits, including regular updates, a rich selection of libraries and tools, comprehensive documentation, and readily available support. We will likely draw on all of these resources as we build the app and they will hopefully expedite our development process and allow us to produce an effective app in the timeframe available.  
-  
-## R2: Dataflow Diagram  
-
-![Travelog app data flow diagram](images%2FTravel_log_app.drawio.png)
-
-## R3: Application Architecture Diagram
-  
-![Travelog App Architecture diagram](images%2FTravel-Log_Application%20Architecture%20Diagram.drawio.png)
-
-## R4: User Stories
-
-The User stories set out below will hopefully illustrate for you some features of the app from the user's perspective. It is by no means an exhaustive list of what users will be able to do, but should give you a feel for the flow of the app. 
-
-***User Story 1:Jamie posts a New Travel Experience*** 
-
-**As** Jamie, a registered user,  
-**I want to** share pictures and details of my recent travel,  
-**So that** I can document my experience and provide insights for other users who might be interested in visiting the same location.  
-
-**Acceptance Criteria:**  
-
-**Given** I'm logged in to my Travelog account,  
-**When** I select the option to create a new travel post,  
-**Then** I should be directed to a page with a form to fill in the details of my travel experience.
-
-**Given** I'm on the 'New Travel Post' form,  
-**When** I upload my travel pictures and fill in the necessary details such as location, dates, highlights, and a description of my experience,  
-**Then** these details should be saved in my draft.
-
-**Given** I've filled out the form,  
-**When** I click the 'Publish' button,  
-**Then** my travel post should be publicly visible to other users on the platform.  
-
-**Given** my post is published,  
-**When** I or other users view my profile,  
-**Then** the new travel post should be visible in my list of travel experiences.
-
-***User Story 2: Brodie asks a Question on another user’s post.***  
-
-**As** Brodie, a registered user,  
-**I want to** ask another user a question about their travel experience,  
-**So that** I can gain more insights or clarify doubts about a potential travel destination.  
-
-**Acceptance Criteria:**  
-
-**Given** I'm logged in to my Travelog account,  
-**When** I navigate to a travel post,  
-**Then** I should see an option to post a comment or question.  
-
+- PFGVTXn1vFHX|
 
 **Given** I have written my question in the comment box,  
 **When** I click the 'Submit' button,  
