@@ -1,3 +1,18 @@
+
+const exoress = require('express');
+const app = express();
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  Response.json({
+    message: "welcome to the travelog backend"
+  });
+});
+
+module.exports = {
+  app
+}
+
 // const mongoose = require('mongoose');
 
 // mongoose.connect('mongodb://localhost/travelog', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -8,7 +23,8 @@
 
 
 // Express route to get user profile
-app.get('/api/user/:username', async (req, res) => {
+
+app.get('/models/user/:username', async (req, res) => {
     try {
       const user = await User.findOne({ username: req.params.username }).populate('locations');
       if (!user) return res.status(404).send('User not found');
