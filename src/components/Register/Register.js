@@ -218,22 +218,22 @@ export function RegisterPage(){
                     <div className="form_elements">
                         <label htmlFor="Surname" className='labels'>Last Name:</label>
                         <input className="inputs" id="Surname" type="text" placeholder="Last name" name="lastname"
-                               value={surNameState.value} onChange={surnameChangeHandler} onBlur={validateSurname}/>
+                               value={surNameState.value} onChange={surnameChangeHandler} onBlur={validateSurname} required/>
                     </div>
                     <div className="form_elements">
                         <label htmlFor="email" className='labels'>Email:</label>
                         <input className="inputs" id="email" type="email" placeholder="Email" name="email"
-                               value={emailState.value} onChange={emailChangeHandler} onBlur={validateEmail}/>
+                               value={emailState.value} onChange={emailChangeHandler} onBlur={validateEmail} required/>
                     </div>
                     <div className="form_elements">
                         <label htmlFor="phonenumber" className='labels'>Phone Number:</label>
                         <input className="inputs" id="phonenumber" type="tel" placeholder="Phone Number" name="phonenumber"
-                               value={phoneState.value} onChange={phoneChangeHandler} onBlur={validatePhone}/>
+                               value={phoneState.value} onChange={phoneChangeHandler} onBlur={validatePhone} required/>
                     </div>
                     <div className="form_elements">
                         <label htmlFor="address" className='labels'>Address: </label>
                         <input className="inputs-address" id="address" type="text" placeholder="address" name="address"
-                               value={addressState.value} onChange={addressChangeHandler} onBlur={validateAddress}/>
+                               value={addressState.value} onChange={addressChangeHandler} onBlur={validateAddress} required/>
                     </div>
                     <div className="form_elements">
                         <label htmlFor="password" className='labels'>Password: </label>

@@ -24,7 +24,7 @@ export function  HomePage(){
 
             </div>
             <div className='second-part'>
-                <div className='description'><p className='description'>Embark on a virtual adventure across the
+                <div ><p className='description'>Embark on a virtual adventure across the
                     globe through our vibrant and user-friendly travel log app, where you can explore
                     a captivating tapestry of travel experiences shared by fellow adventurers,
                     while adding your own journeys with multiple factors like location details,
@@ -33,15 +33,18 @@ export function  HomePage(){
                     passionate community of like-minded explorers, and igniting your wanderlust
                     through inspiring stories, breathtaking visuals, and invaluable tips, all at your fingertips.
                     </p> </div>
-                <img className='image' src={view} alt="image"/>
-                <img className='image' src={mountain_view} alt="image"/>
+                <div className='image-div'>
+                    <img className='image' src={view} alt="image"/>
+                    <img className='image' src={mountain_view} alt="image"/>
+                </div>
+
             </div>
 
             <div className='social'>
                 <p className='join'>Join Us</p>
                 <div>
                     <button className='button' type='button'><i className="fa-brands fa-apple"></i>App Store</button>
-                    <button><i className="fa-brands fa-google-play"></i>Google Play</button>
+                    <button className='button' type='button'><i className="fa-brands fa-google-play"></i>Google Play</button>
                 </div>
 
 
