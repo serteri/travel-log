@@ -12,10 +12,10 @@ function App() {
         <BrowserRouter>
           <NavBar />
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<LoginForm />}/>
-              <Route path="/about" element={<About />}/>
-              <Route path="/register" element={<RegisterPage />}/>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<LoginForm />}/>
+                <Route path="/about" element={<About />}/>
+                <Route path="/register" element={<RegisterPage />}/>
             {/*<Route path="/about" element={<Outlet />}>*/}
             {/*  <Route index element={<AboutPage />} />*/}
             {/*  <Route path="contact" element={<ContactPage />} />*/}

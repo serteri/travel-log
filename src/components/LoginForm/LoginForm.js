@@ -6,7 +6,7 @@ export function LoginForm (props){
 
     const navigate = useNavigate();
     const navigatetoRegister = ()=>{
-        //navigate to /login
+        //navigate to /register
         navigate('/register');
 
     }
@@ -33,30 +33,33 @@ const submitForm = (e) => {
         e.preventDefault();
 
 }
-const resetForm = (e) => {
+const resetForm = () => {
         setEnteredEmail('');
     setEnteredPassword('');
 
 }
     return(
-        <div className="form-element" >
-            <form className="login-form"  onSubmit={submitForm}>
-                <div className="form_elements">
-                    <label className="labels">Email address:</label>
-                    <input className="inputs" type="text" name="name" value={enteredEmail} onChange={emailChangeHandler} required />
+        <div className="form-element1" >
+            <form className="login-form1"  onSubmit={submitForm}>
+                <fieldset>
+                    <legend className="login-form_fieldset">Log In Form</legend>
+
+                <div className="form_elements1">
+                    <label className="labels1" htmlFor='email'>Email address:</label>
+                    <input id="email" className="inputs1" type="email" name="name" value={enteredEmail} onChange={emailChangeHandler} placeholder='email address' required />
                 </div>
-                <div className="form_elements">
-                    <label className="labels">Password:</label>
-                    <input className="inputs" type="password" name="password" value={enteredPassword} onChange={passwordChangeHAndler} required/>
+                <div className="form_elements1">
+                    <label htmlFor='password' className="labels1">Password:</label>
+                    <input id='password' className="inputs1" type="password" name="password" value={enteredPassword} onChange={passwordChangeHAndler} placeholder='password' required/>
                 </div>
-                <div className="buttons">
-                    <button type="submit" className="button-submit">Log In</button>
-                    <button type="reset" onClick={resetForm}>Reset</button>
+                <div className="buttons1">
+                    <button type="submit" className="button-submit1">Log In</button>
+                    <button type="reset" onClick={resetForm} className='button-reset1'>Reset</button>
 
                 </div>
-
+                </fieldset>
             </form>
-            <button onClick={navigatetoRegister} className="button-register">Register</button>
+            <button onClick={navigatetoRegister} className="button-register1">Register</button>
         </div>
 
         )

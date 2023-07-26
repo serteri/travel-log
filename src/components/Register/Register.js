@@ -1,6 +1,6 @@
 
 import React, {useState , useEffect , useReducer} from 'react';
-
+import './Register.css'
 
 
 const nameReducer=(state, action) =>{
@@ -207,42 +207,43 @@ export function RegisterPage(){
         <div className="form-element">
 
                 <form className="login-form" onSubmit={registerForm}>
+
                     <fieldset name="Register">
-                        <legend>Register</legend>
+                        <legend className='register'>Register</legend>
                     <div className="form_elements">
-                        <label htmlFor="Name">First Name:</label>
-                        <input id="Name" type="text" placeholder="First Name" name="firstname"
-                               value={nameState.value} onChange={nameChangeHandler} onBlur={validateNames}/>
+                        <label htmlFor="Name" className='labels'>First Name:</label>
+                        <input className="inputs" id="Name" type="text" placeholder="First Name" name="firstname"
+                               value={nameState.value} onChange={nameChangeHandler} onBlur={validateNames} required/>
                     </div>
                     <div className="form_elements">
-                        <label htmlFor="Surname">Last Name:</label>
-                        <input id="Surname" type="text" placeholder="Last name" name="lastname"
+                        <label htmlFor="Surname" className='labels'>Last Name:</label>
+                        <input className="inputs" id="Surname" type="text" placeholder="Last name" name="lastname"
                                value={surNameState.value} onChange={surnameChangeHandler} onBlur={validateSurname}/>
                     </div>
                     <div className="form_elements">
-                        <label htmlFor="email">Email:</label>
-                        <input id="email" type="email" placeholder="Email" name="email"
+                        <label htmlFor="email" className='labels'>Email:</label>
+                        <input className="inputs" id="email" type="email" placeholder="Email" name="email"
                                value={emailState.value} onChange={emailChangeHandler} onBlur={validateEmail}/>
                     </div>
                     <div className="form_elements">
-                        <label htmlFor="phonenumber">Phone Number:</label>
-                        <input id="phonenumber" type="tel" placeholder="Phone Number" name="phonenumber"
+                        <label htmlFor="phonenumber" className='labels'>Phone Number:</label>
+                        <input className="inputs" id="phonenumber" type="tel" placeholder="Phone Number" name="phonenumber"
                                value={phoneState.value} onChange={phoneChangeHandler} onBlur={validatePhone}/>
                     </div>
                     <div className="form_elements">
-                        <label htmlFor="address">Address: </label>
-                        <input id="address" type="text" placeholder="address" name="address"
+                        <label htmlFor="address" className='labels'>Address: </label>
+                        <input className="inputs-address" id="address" type="text" placeholder="address" name="address"
                                value={addressState.value} onChange={addressChangeHandler} onBlur={validateAddress}/>
                     </div>
                     <div className="form_elements">
-                        <label htmlFor="password">Password: :</label>
-                        <input id="password" type="password" placeholder="password" name="password"
+                        <label htmlFor="password" className='labels'>Password: </label>
+                        <input className="inputs" id="password" type="password" placeholder="password" name="password"
                                value={passwordState.value} onChange={passwordChangeHandler} onBlur={validatePassword}/>
                     </div>
 
                     <div className="buttons">
-                        <button type="submit" className="button-submit">Log In</button>
-                        <button type="reset" onClick={resetForm}>Reset</button>
+                        <button type="submit" className="button-submit">Register</button>
+                        <button type="reset" onClick={resetForm} className='button-reset'>Reset</button>
 
                     </div>
 

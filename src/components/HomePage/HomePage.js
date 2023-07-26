@@ -1,7 +1,8 @@
 
 import {Routes,Route, useNavigate} from "react-router-dom";
 import './HomePage.css';
-import view from '../../images/nice_view.jpeg'
+import view from '../../images/nice_view.jpeg';
+import mountain_view from '../../images/nice-view_mountain.jpeg';
 
 export function  HomePage(){
 
@@ -16,8 +17,8 @@ export function  HomePage(){
     return(
         <div>
             <div className='travel'>
-                <h2>TravelLog</h2>
-                <p>Journey Beyond Boundaries: Connect, Inspire, Explore
+                <h2 className='travel-title'>TravelLog</h2>
+                <p className='travel-text'>Journey Beyond Boundaries: Connect, Inspire, Explore
                 </p>
                 <button className="button_login" onClick={navigatetoLogin}> Log In</button>
 
@@ -32,12 +33,12 @@ export function  HomePage(){
                     passionate community of like-minded explorers, and igniting your wanderlust
                     through inspiring stories, breathtaking visuals, and invaluable tips, all at your fingertips.
                     </p> </div>
-                <div className='image'><img src={view} alt="image"/> </div>
-
+                <img className='image' src={view} alt="image"/>
+                <img className='image' src={mountain_view} alt="image"/>
             </div>
 
             <div className='social'>
-                <p>Join Us</p>
+                <p className='join'>Join Us</p>
                 <div>
                     <button className='button' type='button'><i className="fa-brands fa-apple"></i>App Store</button>
                     <button><i className="fa-brands fa-google-play"></i>Google Play</button>

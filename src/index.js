@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
-// Import the configured items from the server file:
+// // Import the configured items from the server file:
 // var {app, PORT, HOST} = require('./server');
 //
 // // Run the server
