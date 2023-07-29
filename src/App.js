@@ -7,6 +7,8 @@ import {LoginForm} from './components/LoginForm/LoginForm';
 import {About} from './components/About/AboutUs';
 import {RegisterPage} from './components/Register/Register';
 import "./App.css"
+import { UserPage } from './components/UserPage/UserPage.JS';
+
 function App() {
   return (
       <div className='App'>
@@ -17,6 +19,9 @@ function App() {
                 <Route path="/login" element={<LoginForm />}/>
                 <Route path="/about" element={<About />}/>
                 <Route path="/register" element={<RegisterPage />}/>
+                {/* <Route path="/login/userpage" element ={<UserPage />}/> */}
+                {/* {Route path="/login/userpage/newpost" element={NewPost />}/> */}
+
             {/*<Route path="/about" element={<Outlet />}>*/}
             {/*  <Route index element={<AboutPage />} />*/}
             {/*  <Route path="contact" element={<ContactPage />} />*/}
