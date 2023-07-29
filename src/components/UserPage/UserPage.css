@@ -79,17 +79,10 @@
         border-radius: 6px;
         width: 5rem;
 
-<<<<<<< HEAD
-}
-    .button_create:hover{
-        background-color: darkorange;
-}
-=======
     }
     .button_create:hover{
         background-color: darkorange;
     }
->>>>>>> 1bca8ae45851606febc047b1366109cb00f23a34
 
 }
 
