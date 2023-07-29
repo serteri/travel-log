@@ -7,7 +7,7 @@ import {LoginForm} from './components/LoginForm/LoginForm';
 import {About} from './components/About/AboutUs';
 import {RegisterPage} from './components/Register/Register';
 import "./App.css"
-import { UserPage } from './components/UserPage/UserPage.JS';
+import { UserPage } from './components/UserPage/UserPage';
 
 function App() {
   return (
