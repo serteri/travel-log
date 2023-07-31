@@ -27,8 +27,8 @@ app.use(helmet.contentSecurityPolicy({
 // array of origins for CORS configuration.
 const cors = require('cors');
 var corsOptions = {
-    origin: '*',
-    credentials:true,
+    origin:  '*',
+    credentials: true,
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
@@ -37,16 +37,9 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-const rolesController = require("../controllers/RoleRoutes");
-app.use("/", rolesController);
-const usersController = require("../controllers/UserRoutes");
-app.use("/", usersController);
-const postsController = require("../controllers/PostRoutes");
-app.use("/", postsController);
-
 
 const mongoose = require('mongoose');
-var databaseURL = "";
+var databaseURL = '';
 switch (process.env.NODE_ENV.toLowerCase()) {
     case "test":
         databaseURL = "mongodb://localhost:27017/ExpressBuildAnAPI-test";
@@ -61,7 +54,7 @@ switch (process.env.NODE_ENV.toLowerCase()) {
         console.error("Incorrect JS environment specified, database will not be connected.");
         break;
 }
-const {databaseConnector} = require('../database');
+const {databaseConnector} = require('./database');
 databaseConnector(databaseURL).then(() => {
     console.log("Database connected successfully!");
 }).catch(error => {
@@ -69,6 +62,13 @@ databaseConnector(databaseURL).then(() => {
     ${error}
     `);
 });
+
+const rolesController = require("../controllers/RoleRoutes");
+app.use("/", rolesController);
+const usersController = require("../controllers/UserRoutes");
+app.use("/", usersController);
+const postsController = require("../controllers/PostRoutes");
+app.use("/", postsController);
 // Return a bunch of useful details from the database connection
 // Dig into each property here:
 // https://mongoosejs.com/docs/api/connection.html

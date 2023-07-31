@@ -1,182 +1,99 @@
 
 import React, {useState , useEffect , useReducer} from 'react';
+import {Routes,Route, useNavigate} from "react-router-dom";
+import { useDebounce } from 'use-debounce';
 import axios from 'axios';
 import './Register.css'
-
-
-// const nameReducer=(state, action) =>{
-//     if(action.type === 'USER_INPUT') {
-//         return {value:action.val,isValid:action.val.trim().length >= 3};
-//     }
-//     if(action.type === 'INPUT_BLUR') {
-//         return {value:state.value,isValid:state.value.trim().length > 6}
-//     }
-//     if(action.type === 'CLEAR_FORM') {
-//         return {value:'',isValid: null}
-//     }
-//     return {value:'',isValid:false}
-//
-// }
-// const surnameReducer=(state, action) =>{
-//     if(action.type === 'USER_INPUT') {
-//         return {value:action.val,isValid:action.val.trim().length > 3};
-//     }
-//     if(action.type === 'INPUT_BLUR') {
-//         return {value:state.value,isValid:state.value.trim().length > 6}
-//     }
-//     if(action.type === 'CLEAR_FORM') {
-//         return {value:'',isValid: null}
-//     }
-//     return {value:'',isValid:false}
-//
-// }
-// const emailReducer=(state,action) => {
-//     if(action.type === 'USER_INPUT') {
-//         return {value:action.val,isValid:action.val.includes('@')};
-//     }
-//     if(action.type === 'INPUT_BLUR') {
-//         return {value:state.value,isValid:state.value.includes('@')}
-//     }
-//     if(action.type === 'CLEAR_FORM') {
-//         return {value:'',isValid: null}
-//     }
-//     return {value:'',isValid:false}
-// }
-
-// const phoneReducer=(state,action) => {
-//     if(action.type === 'USER_INPUT') {
-//         return {value:action.val,isValid:action.val.trim().length > 9};
-//     }
-//     if(action.type === 'INPUT_BLUR') {
-//         return {value:state.value,isValid:state.value.trim().length > 9}
-//     }
-//     if(action.type === 'CLEAR_FORM') {
-//         return {value:'',isValid: null}
-//     }
-//     return {value:'',isValid:false}
-// }
-// const addressReducer=(state,action) => {
-//     if(action.type === 'USER_INPUT') {
-//         return {value:action.val,isValid:action.val.trim().length > 25};
-//     }
-//     if(action.type === 'INPUT_BLUR') {
-//         return {value:state.value,isValid:state.value.trim().length >25 }
-//     }
-//     if(action.type === 'CLEAR_FORM') {
-//         return {value:'',isValid: null}
-//     }
-//     return {value:'',isValid:false}
-// }
-// const passwordReducer=(state,action) => {
-//     if(action.type === 'USER_INPUT') {
-//         return {value:action.val,isValid:action.val.trim().length > 6}
-//     }
-//     if(action.type === 'INPUT_BLUR') {
-//         return {value:state.value,isValid:state.value.trim().length > 6}
-//     }
-//     if(action.type === 'CLEAR_FORM') {
-//         return {value:'',isValid: null}
-//     }
-//     return {value:'',isValid:false}
-//
-// }
-
-
-
 export function RegisterPage(){
 
-    // const [nameState,dispatchName] = useReducer(nameReducer, {value:'',isValid:null});
-    // const [surNameState,dispatchSurName] = useReducer(surnameReducer, {value:'',isValid:null});
-    // const [emailState,dispatchEmail] = useReducer(emailReducer, {value:'',isValid:null});
-    // const [phoneState,dispatchPhone] = useReducer(phoneReducer, {value:'',isValid:null});
-    // const [addressState,dispatchAddress] = useReducer(addressReducer, {value:'',isValid:null});
-    // const[passwordState,dispatchPassword] = useReducer(passwordReducer,{value:'',isValid:null})
-
-
-    // const{isValid:emailIsValid} = emailState;
-    // const {isValid:passwordIsValid} = passwordState;
-    // const{isValid:addressIsValid} = addressState;
-    // const {isValid:nameIsValid} = nameState;
-    // const{isValid:surNameIsValid} = surNameState;
-    // const {isValid:phoneIsValid} = phoneState;
     const[firstName,setFirstName]= useState('')
     const[lastName,setLastName]= useState('')
     const[email,setEmail]= useState('')
     const[address,setAddress]= useState('')
-    const[phonenumber,setPhonenumber]= useState('')
+    const[phoneNumber,setPhoneNumber]= useState('')
     const[password,setPassword]= useState('')
+    const[firstNameIsValid,setFirstNameIsValid]= useState(true)
+    const[lastNameIsValid,setLastNameIsValid]= useState(true)
+    const[emailIsValid,setEmailIsValid]= useState(true)
+    const[passwordIsValid,setPasswordIsValid]= useState(true)
+    const[phoneNumberIsValid,setPhoneNumberIsValid]= useState(true)
     const[error,setError]= useState('')
-    const [formIsValid, setFormIsValid] = useState(false);
-    useEffect(() => {
-        const identifier = setTimeout(() => {
-            console.log('Checking form validity!');
-            setFormIsValid(
+    const[message,setMessage]= useState('')
+    const [formIsValid, setFormIsValid] = useState(false)
 
-            );
-        }, 500);
+    const navigate = useNavigate();
+
+    const navigatetoLogin = ()=>{
+        //navigate to /login
+        navigate('/login');
+
+    }
+    useEffect(() => {
+        const checking= setTimeout(()=>{
+    firstNameValidation();
+    lastNameValidation();
+
+    passwordValidation()
+
+        },1000)
+        const identifier = setTimeout(() => {
+            setFormIsValid(emailIsValid && firstNameIsValid && lastNameIsValid && passwordIsValid && phoneNumberIsValid);
+            setPhoneNumberIsValid(phoneNumberIsValid)
+        }, 2000);
 
         return () => {
-            console.log('CLEANUP');
-            clearTimeout(identifier);
-        };
-    }, [firstName,lastName,email, address, phonenumber, password, error]);
-    const nameChangeHandler = (event) => {
-        // setEnteredEmail(event.target.value
-        console.log(event.target.value)
-        setFirstName(event.target.value);
 
-        // setFormIsValid(
-        //   event.target.value.includes('@') && passwordState.isValid
-        // );
+            clearTimeout(identifier);
+            clearTimeout(checking);
+        };
+    }, [firstName,lastName,email, address, phoneNumber, password, error,emailIsValid,firstNameIsValid,lastNameIsValid,passwordIsValid,phoneNumberIsValid,message]);
+    const nameChangeHandler = (event) => {
+
+        setFirstName(event.target.value);
     };
+
+    const firstNameValidation = ()=>{
+        setFirstNameIsValid(!/\d/.test(firstName))
+    }
     const surnameChangeHandler = (event) => {
-        // setEnteredEmail(event.target.value);
+
         setLastName(event.target.value);
 
-        // setFormIsValid(
-        //   event.target.value.includes('@') && passwordState.isValid
-        // );
     };
+    const lastNameValidation = ()=>{
+        setLastNameIsValid(!/\d/.test(lastName))
+    }
     const emailChangeHandler = (event) => {
         setEmail(event.target.value);
-        // dispatchEmail({type:'USER_INPUT',val:event.target.value});
 
-        // setFormIsValid(
-        //   event.target.value.includes('@') && passwordState.isValid
-        // );
     };
+
     const phoneChangeHandler = (event) => {
-        setPhonenumber(event.target.value);
-        // dispatchPhone({type:'USER_INPUT',val:event.target.value});
-
-        // setFormIsValid(
-        //   event.target.value.includes('@') && passwordState.isValid
-        // );
+        setPhoneNumber(event.target.value);
+        setPhoneNumberIsValid(!isNaN(event.target.value))
     };
+
     const addressChangeHandler = (event) => {
         setAddress(event.target.value);
-        // dispatchAddress({type:'USER_INPUT',val:event.target.value});
-
-        // setFormIsValid(
-        //   event.target.value.includes('@') && passwordState.isValid
-        // );
     };
 
     const passwordChangeHandler = (event) => {
         setPassword(event.target.value);
-        // dispatchPassword({type:'USER_INPUT',val:event.target.value});
-
-        // setFormIsValid(
-        //   emailState.isValid && event.target.value.trim().length > 6
-        // );
     };
 
+    const passwordValidation = ()=>{
+
+        setPasswordIsValid(password.trim().length>6)
+        if (password.trim().length ===0 ){
+            setPasswordIsValid(true)
+        }
+    }
     const resetForm = (e) => {
         setFirstName('');
         setLastName('');
         setEmail('');
         setPassword('');
-        setPhonenumber('')
+        setPhoneNumber('')
         setAddress('')
     }
     const postData = async ()=>{
@@ -185,11 +102,11 @@ export function RegisterPage(){
             firstName:firstName,
             lastName:lastName,
             email:email,
-            phonenumber:phonenumber,
+            phoneNumber:phoneNumber,
             password:password,
             address:address
         }
-        await axios.post('http://localhost:4000/register',postData).then(response => console.log(response) )
+        await axios.post('http://localhost:4002/register-us',postData).then(response => navigatetoLogin).then(response => setMessage('Successfully Registered!')).catch(error=>{setError('Some error occurred')})
 
     }
 
@@ -201,7 +118,7 @@ export function RegisterPage(){
         setLastName('');
         setEmail('');
         setPassword('');
-        setPhonenumber('')
+        setPhoneNumber('')
         setAddress('')
     }
 
@@ -209,7 +126,7 @@ export function RegisterPage(){
 
         <div className="form-element">
 
-                <form className="login-form" onSubmit={registerForm} >
+                <form className="login-form" >
 
                     <fieldset name="Register">
                         <legend className='register'>Register</legend>
@@ -218,21 +135,25 @@ export function RegisterPage(){
                         <input className="inputs" id="Name" type="text" placeholder="First Name" name="firstName"
                                value={firstName} onChange={nameChangeHandler}  required/>
                     </div>
+                        <p className={firstNameIsValid ? "valid" : "invalid"}>Please enter valid name</p>
                     <div className="form_elements">
                         <label htmlFor="Surname" className='labels'>Last Name:</label>
                         <input className="inputs" id="Surname" type="text" placeholder="Last name" name="lastName"
                                value={lastName} onChange={surnameChangeHandler}  required/>
                     </div>
+                        <p className={lastNameIsValid ? "valid" : "invalid"}>Please enter valid last name</p>
                     <div className="form_elements">
                         <label htmlFor="email" className='labels'>Email:</label>
                         <input className="inputs" id="email" type="email" placeholder="Email" name="email"
                                value={email} onChange={emailChangeHandler}  required/>
                     </div>
+                        <p className={emailIsValid ? "valid" : "invalid"}>Please enter valid email</p>
                     <div className="form_elements">
                         <label htmlFor="phonenumber" className='labels'>Phone Number:</label>
-                        <input className="inputs" id="phonenumber" type="tel" placeholder="Phone Number" name="phonenumber"
-                               value={phonenumber} onChange={phoneChangeHandler}  required/>
+                        <input className="inputs" id="phonenumber" type="tel" placeholder="Starts with 00" name="phoneNumber"
+                               value={phoneNumber} onChange={phoneChangeHandler}  required/>
                     </div>
+                        <p className={phoneNumberIsValid ? "valid" : "invalid"}>Please enter valid phone number</p>
                     <div className="form_elements">
                         <label htmlFor="address" className='labels'>Address: </label>
                         <input className="inputs-address" id="address" type="text" placeholder="address" name="address"
@@ -243,9 +164,9 @@ export function RegisterPage(){
                         <input className="inputs" id="password" type="password" placeholder="password" name="password"
                                value={password} onChange={passwordChangeHandler} />
                     </div>
-
+                        <p className={passwordIsValid ? "valid" : "invalid"}>Please enter longer password</p>
                     <div className="buttons">
-                        <button type="submit" className="button-submit" >Register</button>
+                        <button type="submit" className="button-submit" onClick={registerForm}>Register</button>
                         <button type="reset" onClick={resetForm} className='button-reset'>Reset</button>
 
                     </div>

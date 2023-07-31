@@ -39,6 +39,12 @@
     height: 6rem;
     text-align: center;
 }
+.valid{
+    display:none
+}
+.invalid{
+    color:red;
+}
 
 .image{
     width:30%;

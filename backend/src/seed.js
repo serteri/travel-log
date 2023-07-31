@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { databaseConnector } = require('../database');
+const { databaseConnector } = require('./database');
 
 // Import the models that we'll seed, so that
 // we can do things like Role.insertMany()

@@ -115,8 +115,8 @@ async function createUser(userDetails){
             firstName: userDetails.firstName,
             lastName: userDetails.lastName,
             address: userDetails.address,
-            phonenumber: userDetails.phonenumber,
-            role: userDetails.roleID
+            phoneNumber: userDetails.phoneNumber,
+
         }
     )
 
