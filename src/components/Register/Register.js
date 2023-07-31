@@ -19,7 +19,8 @@ export function RegisterPage(){
     const[phoneNumberIsValid,setPhoneNumberIsValid]= useState(true)
     const[error,setError]= useState('')
     const[message,setMessage]= useState('')
-    const [formIsValid, setFormIsValid] = useState(false)
+    const [formIsValid, setFormIsValid] = useState(false);
+    const[formSubmit,setFormSubmit]= useState(false)
 
     const navigate = useNavigate();
 
@@ -106,7 +107,7 @@ export function RegisterPage(){
             password:password,
             address:address
         }
-        await axios.post('http://localhost:4002/register-us',postData).then(response => navigatetoLogin).then(response => setMessage('Successfully Registered!')).catch(error=>{setError('Some error occurred')})
+        await axios.post('http://localhost:4002/register-us',postData).then(response => setMessage('Successfully Registered!')).then(res=>setFormSubmit(true)).then(response => navigatetoLogin).catch(error=>{setError('Some error occurred')})
 
     }
 
@@ -170,7 +171,7 @@ export function RegisterPage(){
                         <button type="reset" onClick={resetForm} className='button-reset'>Reset</button>
 
                     </div>
-
+                    <p className={formSubmit ? "valid" : "invalid"}>Registration Successful</p>
                     </fieldset>
                 </form>
 
