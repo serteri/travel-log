@@ -104,7 +104,7 @@ response.end()
 // Sign-in an existing user
 router.post('/log-in', async (request, response) => {
     let targetUser = await User.findOne({email: request.body.email}).exec();
-
+console.log(targetUser.id)
     if (await validateHashedData(request.body.password, targetUser.password)){
         let encryptedUserJwt = await generateUserJWT(
             {

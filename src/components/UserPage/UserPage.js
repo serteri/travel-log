@@ -6,7 +6,7 @@ import placeholder from '../../images/placeholderimage.png';
 export function UserPage() {
     const navigate = useNavigate();
 
-    const createpost = ()=>{
+    const createPost = ()=>{
         //navigate to /new post page
         navigate('/login/userpage/newpost');
     }
@@ -36,7 +36,7 @@ export function UserPage() {
             </div>
             <div className="new-experience">
                 <h2 className="new-experience-title" >Enter a new experience</h2>
-                <button className="button_create" onClick={createpost}> New Post</button>
+                <button className="button_create" onClick={createPost}> New Post</button>
             </div>
         </div>
 
