@@ -81,15 +81,15 @@ const handleErrors = async (error, request, response, next) => {
 
 
 // Sign-up a new user
-router.post('/register', async (request, response) => {
+router.post('/register-us',uniqueEmailCheck,handleErrors, async (request, response) => {
     let userDetails = {
         email: request.body.email,
         password: request.body.password,
         firstName: request.body.firstName,
         lastName: request.body.lastName,
         address: request.body.address,
-        phonenumber: request.body.phonenumber,
-        roleID: request.body.roleID
+        phoneNumber: request.body.phoneNumber,
+
     }
     let newUserDoc = await createUser(userDetails);
 if (newUserDoc){
