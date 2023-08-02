@@ -35,7 +35,7 @@ export function UserPage() {
                 </div>
             </div>
             <div className="new-experience">
-                <h2 className="New-experience-title" >Enter a new experience</h2>
+                <h2 className="new-experience-title" >Enter a new experience</h2>
                 <button className="button_create" onClick={createpost}> New Post</button>
             </div>
         </div>
