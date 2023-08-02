@@ -1,5 +1,6 @@
 import React, {useState , useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
+import axios from 'axios';
 import './LoginForm.css'
 
 export function LoginForm (props){
@@ -10,17 +11,24 @@ export function LoginForm (props){
         navigate('/register');
 
     }
-    const [enteredEmail,setEnteredEmail]= useState('')
-    const [enteredPassword,setEnteredPassword]= useState('')
+    const navigatetoUser = ()=>{
+        //navigate to /register
+        navigate('/user/:userid');
+
+    }
+    const [email,setEnteredEmail]= useState('')
+    const [password,setEnteredPassword]= useState('')
+    const[message,setMessage]= useState('')
     const [formIsValid, setFormIsValid] = useState(false);
+    const[error,setError]= useState('')
 
     useEffect(()=>{
        const identifier = setTimeout(()=>{
-           setFormIsValid(enteredEmail.includes('@') && enteredPassword.trim().length > 6)
+           setFormIsValid(email.includes('@') && password.trim().length > 6)
        },500)
         return () => {clearTimeout(identifier)}
 
-    },[enteredEmail,enteredPassword]
+    },[email,password]
     )
     const emailChangeHandler= (e) => {
         setEnteredEmail(e.target.value)
@@ -29,9 +37,23 @@ export function LoginForm (props){
     const passwordChangeHAndler= (e) => {
         setEnteredPassword(e.target.value)
     }
+
+    const postData = async ()=>{
+
+        const postData = {
+            email:email,
+            password:password,
+
+
+        }
+        await axios.post('http://localhost:4011/log-in',postData).then(response => console.log(response)).catch(error=>{console.log(error.message)})
+
+    }
 const submitForm = (e) => {
         e.preventDefault();
-
+        postData();
+        setEnteredEmail('')
+    setEnteredPassword('')
 }
 const resetForm = () => {
         setEnteredEmail('');
@@ -46,11 +68,11 @@ const resetForm = () => {
 
                 <div className="form_elements1">
                     <label className="labels1" htmlFor='email'>Email address:</label>
-                    <input id="email" className="inputs1" type="email" name="name" value={enteredEmail} onChange={emailChangeHandler} placeholder='email address' required />
+                    <input id="email" className="inputs1" type="email" name="email" value={email} onChange={emailChangeHandler} placeholder='email address' required />
                 </div>
                 <div className="form_elements1">
                     <label htmlFor='password' className="labels1">Password:</label>
-                    <input id='password' className="inputs1" type="password" name="password" value={enteredPassword} onChange={passwordChangeHAndler} placeholder='password' required/>
+                    <input id='password' className="inputs1" type="password" name="password" value={password} onChange={passwordChangeHAndler} placeholder='password' required/>
                 </div>
                 <div className="buttons1">
                     <button type="submit" className="button-submit1">Log In</button>
