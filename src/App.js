@@ -1,5 +1,5 @@
 import React  from 'react';
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet ,createBrowserRouter , RouterProvider} from 'react-router-dom';
 import { NavBar } from './components/Navbar/Navbar';
 import {HomePage} from './components/HomePage/HomePage'
 import {Footer} from './components/Footer/Footer';
@@ -9,28 +9,38 @@ import {RegisterPage} from './components/Register/Register';
 import "./App.css"
 import { UserPage } from './components/UserPage/UserPage';
 
-function App() {
-  return (
-      <div className='App'>
-        <BrowserRouter>
-          <NavBar />
-          <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/login" element={<LoginForm />}/>
-                <Route path="/about" element={<About />}/>
-                <Route path="/register" element={<RegisterPage />}/>
-                <Route path="/login/userpage" element ={<UserPage />}/>
-                {/* {Route path="/login/userpage/newpost" element={NewPost />}/> */}
 
-            {/*<Route path="/about" element={<Outlet />}>*/}
-            {/*  <Route index element={<AboutPage />} />*/}
-            {/*  <Route path="contact" element={<ContactPage />} />*/}
-            {/*</Route>*/}
-          </Routes>
-            <Footer />
-        </BrowserRouter>
-      </div>
-  );
+const router = createBrowserRouter(
+    { path:"/" , element:<HomePage />},
+    { path:"/login" , element:<LoginForm/>},
+    { path:"/about" , element:<About/>}
+
+)
+
+function App() {
+    return (
+        <div className='App'>
+            <RouterProvider router={router}/>
+            <BrowserRouter>
+                <NavBar />
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/login" element={<LoginForm />}/>
+                    <Route path="/about" element={<About />}/>
+                    <Route path="/register" element={<RegisterPage />}/>
+                    <Route path="/user/:id" element ={<UserPage />}/>
+
+                    {/* {Route path="/login/userpage/newpost" element={NewPost />}/> */}
+
+                    {/*<Route path="/about" element={<Outlet />}>*/}
+                    {/*  <Route index element={<AboutPage />} />*/}
+                    {/*  <Route path="contact" element={<ContactPage />} />*/}
+                    {/*</Route>*/}
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
