@@ -33,6 +33,16 @@ body { background-color: red; }
     background-color: #f9f9f9;
 }
 
+.name{
+    color: coral;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-size: larger;
+}
+.logout{
+    margin-left: 2rem;
+}
+
 .new-experience{
     text-align: center;
     margin-top: 3rem;

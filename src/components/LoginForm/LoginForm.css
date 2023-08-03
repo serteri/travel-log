@@ -63,11 +63,13 @@
     width: 7rem;
 }
 .button-register1{
+    margin-left:1rem;
     margin-top: 2rem;
     color: darkorange;
     border-radius: 10px;
     width: 5rem;
     transition: width ease-in-out;
+
 }
 .button-register1:hover{
     width: 7rem;

@@ -1,7 +1,8 @@
 import React, {useState , useEffect} from 'react';
-import {useNavigate} from "react-router-dom";
+import {isRouteErrorResponse, useNavigate , useParams} from "react-router-dom";
 import axios from 'axios';
 import './LoginForm.css'
+import {UserPage} from "../UserPage/UserPage";
 
 export function LoginForm (props){
 
@@ -11,9 +12,9 @@ export function LoginForm (props){
         navigate('/register');
 
     }
-    const navigatetoUser = ()=>{
+    const navigatetoUser = (id)=>{
         //navigate to /register
-        navigate('/user/:userid');
+        navigate(`/user/:${id}`);
 
     }
     const [email,setEnteredEmail]= useState('')
@@ -21,14 +22,16 @@ export function LoginForm (props){
     const[message,setMessage]= useState('')
     const [formIsValid, setFormIsValid] = useState(false);
     const[error,setError]= useState('')
-
+    const[name,setName] = useState('')
+    const[isLoggedIn,setIsLoggedIn] = useState(false)
+    const [authenticated, setauthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
     useEffect(()=>{
        const identifier = setTimeout(()=>{
            setFormIsValid(email.includes('@') && password.trim().length > 6)
        },500)
         return () => {clearTimeout(identifier)}
 
-    },[email,password]
+    },[email,password,isLoggedIn]
     )
     const emailChangeHandler= (e) => {
         setEnteredEmail(e.target.value)
@@ -46,7 +49,12 @@ export function LoginForm (props){
 
 
         }
-        await axios.post('http://localhost:4011/log-in',postData).then(response => console.log(response)).catch(error=>{console.log(error.message)})
+        await axios.post('http://localhost:4011/log-in',postData).then(response => {
+         setName(response.data.firstName);
+         setauthenticated(true)
+            localStorage.setItem('authenticated',true);
+            localStorage.setItem('name',response.data.firstName)
+            navigatetoUser(response.data.id)}).then().catch(error=>{console.log(error.message)})
 
     }
 const submitForm = (e) => {
@@ -77,11 +85,13 @@ const resetForm = () => {
                 <div className="buttons1">
                     <button type="submit" className="button-submit1">Log In</button>
                     <button type="reset" onClick={resetForm} className='button-reset1'>Reset</button>
+                    <button onClick={navigatetoRegister} className='button-register1'>Register</button>
 
                 </div>
                 </fieldset>
             </form>
-            <button onClick={navigatetoRegister} className="button-register1">Register</button>
+
+
         </div>
 
         )

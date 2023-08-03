@@ -1,4 +1,4 @@
-import React  from 'react';
+import React ,{useState}  from 'react';
 import { BrowserRouter, Routes, Route, Outlet ,createBrowserRouter , RouterProvider} from 'react-router-dom';
 import { NavBar } from './components/Navbar/Navbar';
 import {HomePage} from './components/HomePage/HomePage'
@@ -7,20 +7,26 @@ import {LoginForm} from './components/LoginForm/LoginForm';
 import {About} from './components/About/AboutUs';
 import {RegisterPage} from './components/Register/Register';
 import "./App.css"
-import { UserPage } from './components/UserPage/UserPage';
+import {UserPage} from './components/UserPage/UserPage';
+import RootLayout from "./Root";
+import Error from "./components/Error/Error";
 
 
-const router = createBrowserRouter(
-    { path:"/" , element:<HomePage />},
-    { path:"/login" , element:<LoginForm/>},
-    { path:"/about" , element:<About/>}
 
-)
 
 function App() {
+
+
+    const [isSignedIn, setIsSignedIn] = useState(null)
+    const signin = () => {
+        setIsSignedIn(true)
+    }
+    const signout = () => {
+        setIsSignedIn(false)
+    }
     return (
-        <div className='App'>
-            <RouterProvider router={router}/>
+
+            // <RouterProvider router={router}/>
             <BrowserRouter>
                 <NavBar />
                 <Routes>
@@ -29,6 +35,7 @@ function App() {
                     <Route path="/about" element={<About />}/>
                     <Route path="/register" element={<RegisterPage />}/>
                     <Route path="/user/:id" element ={<UserPage />}/>
+                    <Route path='*' element={<Error />}/>
 
                     {/* {Route path="/login/userpage/newpost" element={NewPost />}/> */}
 
@@ -39,7 +46,7 @@ function App() {
                 </Routes>
                 <Footer />
             </BrowserRouter>
-        </div>
+
     );
 }
 
