@@ -1,30 +1,30 @@
-const {Post} = require('../models/PostTravel');
+const {PostTravel} = require('../models/PostTravel');
 
 // Model.find({}) returns all documents in a collection.
 async function getAllPosts(){
-    return await Post.find({}).exec();
+    return await PostTravel.find({}).exec();
 }
 
 async function getPostById(postID){
-    return await Post.findById(postID).exec();
+    return await PostTravel.findById(postID).exec();
 }
 
 async function getPostsByAuthor(userID){
-    return await Post.find({author: userID}).exec();
+    return await PostTravel.find({author: userID}).exec();
 }
 
 async function createPost(postDetails){
-    return await Post.create(postDetails);
+    return await PostTravel.create(postDetails);
 }
 
 async function updatePost(postDetails){
     // Find user, update it, return the updated user data.
-    return await Post.findByIdAndUpdate(postDetails.postID, postDetails.updatedData, {returnDocument: 'after'}).exec();
+    return await PostTravel.findByIdAndUpdate(postDetails.postID, postDetails.updatedData, {returnDocument: 'after'}).exec();
 
 }
 
 async function deletePost(postID){
-    return await Post.findByIdAndDelete(postID).exec();
+    return await PostTravel.findByIdAndDelete(postID).exec();
 
 }
 

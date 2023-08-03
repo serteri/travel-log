@@ -10,6 +10,7 @@ import "./App.css"
 import {UserPage} from './components/UserPage/UserPage';
 import RootLayout from "./Root";
 import Error from "./components/Error/Error";
+import {PostTravel} from "./components/PostTravel/PostTravel";
 
 
 
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/about" element={<About />}/>
                     <Route path="/register" element={<RegisterPage />}/>
                     <Route path="/user/:id" element ={<UserPage />}/>
+                    <Route path="/user/:id/postId" element ={<PostTravel />}/>
                     <Route path='*' element={<Error />}/>
 
                     {/* {Route path="/login/userpage/newpost" element={NewPost />}/> */}

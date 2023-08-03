@@ -89,7 +89,7 @@ router.post('/register-us',uniqueEmailCheck,handleErrors, async (request, respon
         lastName: request.body.lastName,
         address: request.body.address,
         phoneNumber: request.body.phoneNumber,
-
+        role :"user"
     }
     let newUserDoc = await createUser(userDetails);
 if (newUserDoc){

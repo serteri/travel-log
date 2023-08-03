@@ -1,5 +1,5 @@
 import React , {useState , useEffect} from 'react';
-import {LoginForm} from '../LoginForm/LoginForm';
+
 import {
     Routes,
     Route,
@@ -15,12 +15,11 @@ import placeholder from '../../images/placeholderimage.png';
 import axios from "axios";
 import idObj from "identity-obj-proxy/src/test-redirections/idObjES6Export";
 
-let name = LoginForm.name;
-console.log(name)
 export function UserPage() {
     const navigate = useNavigate();
     const [authenticated, setAuthenticated] = useState(null);
     const[name,setName] = useState('')
+
     useEffect(() => {
         const loggedInUser = localStorage.getItem("authenticated");
         if (loggedInUser) {
@@ -28,13 +27,13 @@ export function UserPage() {
         }
     }, []);
 
-    let username = localStorage.getItem("name").charAt(0).toUpperCase() +localStorage.getItem("name").slice(1); ;
+    let username = localStorage.getItem("name").charAt(0).toUpperCase() +localStorage.getItem("name").slice(1);
+    let id = localStorage.getItem("id")
+    console.log(id)
     const createPost = ()=>{
         //navigate to /new post page
-        navigate('/login/user/:id/postId');
+        navigate(`/user/:${id}/postId`);
     }
-
-
 
     return(
         <div>

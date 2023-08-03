@@ -53,7 +53,8 @@ export function LoginForm (props){
          setName(response.data.firstName);
          setauthenticated(true)
             localStorage.setItem('authenticated',true);
-            localStorage.setItem('name',response.data.firstName)
+            localStorage.setItem('name',response.data.firstName);
+            localStorage.setItem('id',response.data.id);
             navigatetoUser(response.data.id)}).then().catch(error=>{console.log(error.message)})
 
     }
