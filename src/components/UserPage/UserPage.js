@@ -42,3 +42,5 @@ export function UserPage() {
 
     )
 }
+
+module.exports = UserPage 

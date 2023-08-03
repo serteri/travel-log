@@ -16,9 +16,3 @@ describe('Footer', () => {
 
 
 
-// Testing to confirm jest working.
-// const addition = require ('./Footer')
-
-// test ('it adds 2 and 6 and returns 8', ()=>{
-//     expect(addition(2,6)).toBe(8)
-// })
