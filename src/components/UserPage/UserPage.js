@@ -15,6 +15,25 @@ import placeholder from '../../images/placeholderimage.png';
 import axios from "axios";
 import idObj from "identity-obj-proxy/src/test-redirections/idObjES6Export";
 
+// export function UserPage() {
+//     const navigate = useNavigate();
+//     const [authenticated, setAuthenticated] = useState(null);
+//     const[name,setName] = useState('')
+
+//     useEffect(() => {
+//         const loggedInUser = localStorage.getItem("authenticated");
+//         if (loggedInUser) {
+//             setAuthenticated(loggedInUser);
+//         }
+//     }, []);
+
+//     let username = localStorage.getItem("name").charAt(0).toUpperCase() +localStorage.getItem("name").slice(1);
+//     let id = localStorage.getItem("id")
+//     console.log(id)
+//     const createPost = ()=>{
+//         //navigate to /new post page
+//         navigate(`/user/:${id}/postId`);
+//     }
 export function UserPage() {
     const navigate = useNavigate();
     const [authenticated, setAuthenticated] = useState(null);
@@ -27,14 +46,14 @@ export function UserPage() {
         }
     }, []);
 
-    let username = localStorage.getItem("name").charAt(0).toUpperCase() +localStorage.getItem("name").slice(1);
+    let nameItem = localStorage.getItem("name");
+    let username = nameItem ? nameItem.charAt(0).toUpperCase() + nameItem.slice(1) : '';
     let id = localStorage.getItem("id")
     console.log(id)
     const createPost = ()=>{
         //navigate to /new post page
         navigate(`/user/:${id}/postId`);
     }
-
     return(
         <div>
             <p className='name'>Welcome {username}</p>
@@ -62,7 +81,7 @@ export function UserPage() {
         </div>
         <div className="new-experience">
             <h2 className="New-experience-title" >Enter a new experience</h2>
-            <button className="button_create" onClick={createpost}> New Post</button>
+            <button className="button_create" onClick={createPost}> New Post</button>
         </div>
     </div>
 

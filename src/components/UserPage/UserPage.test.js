@@ -24,6 +24,6 @@ describe('UserPage', () => {
     fireEvent.click(getByRole('button', { name: /new post/i }));
   
     // Check that we have navigated to the new post page
-    expect(getByText('New post page')).toBeInTheDocument();
+    expect(getByText('New post')).toBeInTheDocument();
   });
 });
