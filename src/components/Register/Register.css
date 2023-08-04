@@ -49,7 +49,6 @@
 }
 .buttons{
     margin-top: 1.3rem;
-
 }
 
 .button-submit{
@@ -67,8 +66,14 @@
     background-color: azure;
 }
 
+.valid{
 
+    display: none;
+    }
+.invalid{
+    color: brown;
 
+}
 
 @media (max-width: 428px){
     .form-element{

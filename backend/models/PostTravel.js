@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
 const PostTravelSchema = new mongoose.Schema({
-    title: String,
     content: String,
+    location:String,
+    date:Date,
+    cost:Number,
     author: {type: mongoose.Types.ObjectId, ref: 'User'}
 });
 

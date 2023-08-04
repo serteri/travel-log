@@ -15,10 +15,10 @@ export function  NavBar (){
               <div>
                   <ul className="navbar_list_items navbar_list">
 
-                      <li className="nav-items "><NavLink className='nav-link' to="/">Home</NavLink></li>
-                      <li className="nav-items "><NavLink className='nav-link' to="/about">About</NavLink></li>
-                      <li className="nav-items"><NavLink className='nav-link' to="/login">Login</NavLink></li>
-                      <li className="nav-items"><input className="nav_search" type="search" placeholder="Search"/> </li>
+                      <li className="nav-items "><NavLink className={({isActive}) => isActive ? 'nav-link actives'  : 'nav-link'} to="/">Home</NavLink></li>
+                      <li className="nav-items "><NavLink className={({isActive}) => isActive ? 'nav-link actives'  : 'nav-link'} to="/about">About</NavLink></li>
+                      <li className="nav-items"><NavLink className={({isActive}) => isActive ? 'nav-link actives'  : 'nav-link'} to="/login">Login</NavLink></li>
+
                   </ul>
               </div>
 

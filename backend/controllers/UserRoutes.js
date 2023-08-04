@@ -89,7 +89,7 @@ router.post('/register-us',uniqueEmailCheck,handleErrors, async (request, respon
         lastName: request.body.lastName,
         address: request.body.address,
         phoneNumber: request.body.phoneNumber,
-
+        role :"user"
     }
     let newUserDoc = await createUser(userDetails);
 if (newUserDoc){
@@ -104,7 +104,11 @@ response.end()
 // Sign-in an existing user
 router.post('/log-in', async (request, response) => {
     let targetUser = await User.findOne({email: request.body.email}).exec();
-console.log(targetUser.id)
+    let userName = targetUser.firstName;
+    let lastName = targetUser.lastName;
+    let id = targetUser.id;
+    console.log( await validateHashedData(request.body.password, targetUser.password))
+
     if (await validateHashedData(request.body.password, targetUser.password)){
         let encryptedUserJwt = await generateUserJWT(
             {
@@ -114,11 +118,13 @@ console.log(targetUser.id)
             }
         );
 
-        response.json(encryptedUserJwt);
+        response.send({id:id , firstName:userName});
+
 
     } else {
         response.status(400).json({message:"Invalid user details provided."});
     }
+
 });
 
 // Extend a user's JWT validity
@@ -154,8 +160,9 @@ router.get('/', async (request, response) => {
 });
 
 // Show a specific user
-router.get('/:userID', async (request, response) => {
-    response.json(await getSpecificUser(request.params.userID));
+router.get('/user/:id', async (request, response) => {
+
+    response.send(await getSpecificUser(request.params.id));
 });
 
 
