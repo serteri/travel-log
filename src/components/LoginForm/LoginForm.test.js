@@ -45,7 +45,9 @@ describe("LoginForm component", () => {
     });
   });
 
-  // Add similar tests for the remaining functionalities if time permits.
+  
 });
+
+// Will try to add similar tests for the remaining functionalities if time permits.
 
 
