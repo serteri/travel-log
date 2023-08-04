@@ -1,5 +1,5 @@
 import React , {useState , useEffect} from 'react';
-
+import axios from "axios";
 import {
     Routes,
     Route,
@@ -9,11 +9,9 @@ import {
     useSearchParams,
     useRouteLoaderData
 } from "react-router-dom";
-import { AxiosRequestConfig } from "axios";
+
 import './UserPage.css';
-import placeholder from '../../images/placeholderimage.png';
-import axios from "axios";
-import idObj from "identity-obj-proxy/src/test-redirections/idObjES6Export";
+
 
 export function UserPage() {
     const navigate = useNavigate();
@@ -32,8 +30,15 @@ export function UserPage() {
     console.log(id)
     const createPost = ()=>{
         //navigate to /new post page
-        navigate(`/user/:${id}/postId`);
+        navigate(`/user/:${id}/newPost`);
     }
+
+    // let posts= []
+    // const m = axios.get(`http://localhost:4011/author/:${id}`).then((response)=>{
+    //         response.map(posts.push(response.postsArray))
+    //
+    // })
+    // console.log(posts)
 
     return(
         <div>

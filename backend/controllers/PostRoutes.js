@@ -71,6 +71,7 @@ router.get('/', async (request, response) => {
 
 // Show posts by specific user
 router.get('/author/:authorID', async (request, response) => {
+
     let postsByAuthor = await getPostsByAuthor(request.params.authorID);
 
     response.json({
@@ -85,8 +86,19 @@ router.get('/:postID', async (request, response) => {
 });
 
 // Create a post
-router.post('/', async (request, response) => {
-    response.json(await createPost(request.body.postDetails));
+router.post('/user/:id/post', async (request, response) => {
+    let userid = request.params.id
+    console.log(userid);
+    let postDetails = {
+        location: request.body.location,
+
+        date: request.body.date,
+       cost: request.body.cost,
+        post: request.body.post,
+      userid:userid
+
+    }
+    response.json(await createPost(postDetails));
 });
 
 // Update a specific post

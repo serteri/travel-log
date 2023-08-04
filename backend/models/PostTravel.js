@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 
 const PostTravelSchema = new mongoose.Schema({
-    content: String,
+    post: String,
     location:String,
     date:Date,
     cost:Number,
     author: {type: mongoose.Types.ObjectId, ref: 'User'}
 });
 
-const PostTravel = mongoose.model('Post', PostTravelSchema,'location');
+const PostTravel = mongoose.model('Post', PostTravelSchema,'posts');
 
 module.exports = {PostTravel};

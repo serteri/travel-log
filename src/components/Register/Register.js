@@ -107,7 +107,7 @@ export function RegisterPage(){
             password:password,
             address:address
         }
-        await axios.post('http://localhost:4002/register-us',postData).then(response => setMessage('Successfully Registered!')).then(res=>setFormSubmit(true)).then(response => navigatetoLogin).catch(error=>{setError('Some error occurred')})
+        await axios.post('http://localhost:4011/register-us',postData).then(response => setMessage('Successfully Registered!')).then(res=>setFormSubmit(true)).then(response => navigatetoLogin).catch(error=>{setError('Some error occurred')})
 
     }
 

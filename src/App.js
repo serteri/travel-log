@@ -36,7 +36,8 @@ function App() {
                     <Route path="/about" element={<About />}/>
                     <Route path="/register" element={<RegisterPage />}/>
                     <Route path="/user/:id" element ={<UserPage />}/>
-                    <Route path="/user/:id/postId" element ={<PostTravel />}/>
+                    <Route path="/user/:id/newPost" element ={<PostTravel />}/>
+
                     <Route path='*' element={<Error />}/>
 
                     {/* {Route path="/login/userpage/newpost" element={NewPost />}/> */}

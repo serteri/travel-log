@@ -1,18 +1,29 @@
 import React , {useState , useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './PostTravel.css'
+import axios from "axios";
 
 
 
 export function PostTravel (){
+    let {id} = useParams();
+    const navigate = useNavigate()
 
-let {id} = useParams();
+    const navigateToNewPost =() => {
+
+
+        navigate('/login');
+    }
+
+
 const[location,setLocation] = useState('')
     const[date,setDate] = useState('')
 const[cost,setCost] = useState('')
 const[post,setPost] = useState('')
     const[locationIsValid,setLocationIsValid] = useState(true)
     const[costIsValid,setCostIsValid] = useState(true)
+    const[message,setMessage]= useState('')
+    const[error,setError]= useState('')
 useEffect(() => {
     const checking= setTimeout(()=>{
         locationValidation();
@@ -39,8 +50,27 @@ const locationHandler =(e) =>{
         setPost(e.target.value)
     }
 
+    const postData = async ()=>{
+        const postData = {
+            post: post,
+            location: location,
+            cost: cost,
+            date:date,
+
+
+        }
+        await axios.post(`http://localhost:4011/user/:${id}/post`,postData).catch(error=>{setError('Some error occurred')})
+
+
+
+    }
     const submitPost =(e) =>{
         e.preventDefault();
+        postData()
+        setCost('')
+        setLocation('')
+        setPost('')
+        setDate('')
     }
 
 return(
