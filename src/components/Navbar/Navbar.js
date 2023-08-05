@@ -29,4 +29,9 @@ export function  NavBar (){
 
     )
 }
+<<<<<<< HEAD
 // module.exports = NavBar
+=======
+
+// module.exports = NavBar
+>>>>>>> refs/remotes/origin/server

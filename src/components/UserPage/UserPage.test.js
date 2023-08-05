@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import { UserPage } from './UserPage';  // Change this line
+import { UserPage } from './UserPage'; 
 
 describe('UserPage', () => {
   it('renders correctly and navigates on button click', () => {
@@ -24,6 +24,8 @@ describe('UserPage', () => {
     fireEvent.click(getByRole('button', { name: /new post/i }));
   
     // Check that we have navigated to the new post page
-    // expect(getByText('new')).toBeInTheDocument();
+    expect(getByText('New post page')).toBeInTheDocument();
   });
 });
+
+  
