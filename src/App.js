@@ -29,6 +29,7 @@ function App() {
 
             // <RouterProvider router={router}/>
             <BrowserRouter>
+
                 <NavBar />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
