@@ -9,3 +9,11 @@ describe('About', () => {
     expect(heading).toBeInTheDocument();
   });
 });
+
+describe('About', () => {
+  test('renders Travel Log heading', () => {
+    render(<About />);
+    const heading = screen.getByText(/Travel Log/i);
+    expect(heading).toBeInTheDocument();
+  });
+});

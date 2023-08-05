@@ -51,3 +51,5 @@ export function About (){
     )
 
 }
+
+// module.exports = { About }
