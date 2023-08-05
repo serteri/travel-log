@@ -4,6 +4,7 @@ import './PostTravel.css';
 import axios from 'axios';
 
 export function PostTravel() {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/';
     let { id } = useParams();
     const navigate = useNavigate();
 
@@ -60,7 +61,7 @@ export function PostTravel() {
         };
 
         try {
-            await axios.post(`http://localhost:4011/user/${id}/post`, postData).then( response => navigateToUser(id));
+            await axios.post(`${backendUrl}/user/${id}/post`, postData).then( response => navigateToUser(id));
         } catch (error) {
             setError('Some error occurred');
         }

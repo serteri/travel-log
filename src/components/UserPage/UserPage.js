@@ -20,7 +20,7 @@ import '../PostCards/PostCard.css';
 
 export function UserPage() {
     const navigate = useNavigate();
-
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/';
     const [authenticated, setAuthenticated] = useState(null);
     const[name,setName] = useState('')
     const [posts, setPosts] = useState([]);
@@ -37,7 +37,7 @@ export function UserPage() {
 
             try {
                 const id = localStorage.getItem('id'); // Make sure the ID is correct
-                const response = await axios.get(`http://localhost:4011/posts/${id}`);
+                const response = await axios.get(`${backendUrl}/posts/${id}`);
                 setPosts(response.data.postsArray);
             } catch (error) {
                 console.error('Error retrieving posts:', error);

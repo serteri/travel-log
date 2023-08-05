@@ -5,6 +5,7 @@ import './LoginForm.css'
 import {UserPage} from "../UserPage/UserPage";
 
 export function LoginForm (props){
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/';
 
     const navigate = useNavigate();
     const navigateToRegister = ()=>{
@@ -49,7 +50,7 @@ export function LoginForm (props){
 
 
         }
-        await axios.post('http://localhost:4011/log-in',postData).then(response => {
+        await axios.post(`${backendUrl}/log-in`,postData).then(response => {
          setName(response.data.firstName);
          setauthenticated(true)
             localStorage.setItem('authenticated',true);
@@ -74,6 +75,8 @@ const submitForm = async (e) => {
         localStorage.setItem('authenticated', true);
         localStorage.setItem('name', firstName);
         localStorage.setItem('id', id);
+        setEnteredEmail('');
+        setEnteredPassword('');
         navigateToUser(id);
     } catch (error) {
         setError('Some error occurred during login.');

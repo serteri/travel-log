@@ -5,7 +5,7 @@ import { useDebounce } from 'use-debounce';
 import axios from 'axios';
 import './Register.css'
 export function RegisterPage(){
-
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/';
     const[firstName,setFirstName]= useState('')
     const[lastName,setLastName]= useState('')
     const[email,setEmail]= useState('')
@@ -107,7 +107,7 @@ export function RegisterPage(){
             password:password,
             address:address
         }
-        await axios.post('http://localhost:4011/register-us',postData).then(response => setMessage('Successfully Registered!')).then(res=>setFormSubmit(true)).then(response => navigatetoLogin).catch(error=>{setError('Some error occurred')})
+        await axios.post(`${backendUrl}/register-us`,postData).then(response => setMessage('Successfully Registered!')).then(res=>setFormSubmit(true)).then(response => navigatetoLogin).catch(error=>{setError('Some error occurred')})
 
     }
 

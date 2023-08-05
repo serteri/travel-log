@@ -1,6 +1,6 @@
 # Travelog App
 Part A Presentations:
-
+Duncan's presentation: https://youtu.be/PhBlVR01rfM (please excuse noise of my kids playing in background!)
 ## Serter Iyigunlu presentation:
 
 I added my presentation : https://youtu.be/Ols0jTex2RE
