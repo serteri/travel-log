@@ -5,7 +5,7 @@ import { useDebounce } from 'use-debounce';
 import axios from 'axios';
 import './Register.css'
 export function RegisterPage(){
-    const backendUrl = 'https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/';
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/';
     const[firstName,setFirstName]= useState('')
     const[lastName,setLastName]= useState('')
     const[email,setEmail]= useState('')

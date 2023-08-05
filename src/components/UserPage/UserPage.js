@@ -20,7 +20,9 @@ import '../PostCards/PostCard.css';
 
 export function UserPage() {
     const navigate = useNavigate();
-    const backendUrl = 'https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/';
+
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/';
+
     const [authenticated, setAuthenticated] = useState(null);
     const[name,setName] = useState('')
     const [posts, setPosts] = useState([]);

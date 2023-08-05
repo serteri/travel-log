@@ -4,7 +4,7 @@ import './PostTravel.css';
 import axios from 'axios';
 
 export function PostTravel() {
-    const backendUrl =  'https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/';
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/';
     let { id } = useParams();
     const navigate = useNavigate();
 
