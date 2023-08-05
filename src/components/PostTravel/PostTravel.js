@@ -1,79 +1,83 @@
-import React , {useState , useEffect} from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './PostTravel.css'
-import axios from "axios";
+import './PostTravel.css';
+import axios from 'axios';
 
+export function PostTravel() {
+    let { id } = useParams();
+    const navigate = useNavigate();
 
-
-export function PostTravel (){
-    let {id} = useParams();
-    const navigate = useNavigate()
-
-    const navigateToNewPost =() => {
-
-
+    const navigateToNewPost = () => {
         navigate('/login');
+    };
+    const navigateToUser = (m)=>{
+
+        navigate(`/user/:${m}`);
+
     }
+    const [location, setLocation] = useState('');
+    const [date, setDate] = useState('');
+    const [cost, setCost] = useState('');
+    const [post, setPost] = useState('');
+    const [locationIsValid, setLocationIsValid] = useState(true);
+    const [costIsValid, setCostIsValid] = useState(true);
+    const [message, setMessage] = useState('');
+    const [error, setError] = useState('');
 
+    const locationHandler = (e) => {
+        setLocation(e.target.value);
+    };
 
-const[location,setLocation] = useState('')
-    const[date,setDate] = useState('')
-const[cost,setCost] = useState('')
-const[post,setPost] = useState('')
-    const[locationIsValid,setLocationIsValid] = useState(true)
-    const[costIsValid,setCostIsValid] = useState(true)
-    const[message,setMessage]= useState('')
-    const[error,setError]= useState('')
-useEffect(() => {
-    const checking= setTimeout(()=>{
-        locationValidation();
+    const locationValidation = (e) => {
+        setLocationIsValid(!/\d/.test(location));
+    };
 
-    },1000)
+    const dateHandler = (e) => {
+        setDate(e.target.value);
+    };
 
-},[location, date, cost, post])
+    const costHandler = (e) => {
+        setCost(e.target.value);
+    };
 
-const locationHandler =(e) =>{
-    setLocation(e.target.value)
-}
-    const locationValidation =(e) =>{
-        setLocationIsValid(!/\d/.test(location))
-    }
-
-    const dateHandler =(e) =>{
-        setDate(e.target.value)
-    }
-    const costHandler =(e) =>{
-        setCost(e.target.value)
-    }
-
-    const postHandler =(e) =>{
-        setPost(e.target.value)
-    }
-
-    const postData = async ()=>{
+    const postHandler = (e) => {
+        setPost(e.target.value);
+    };
+    const formatDate = (date) => {
+        const d = new Date(date);
+        const day = d.getDate().toString().padStart(2, '0');
+        const month = (d.getMonth() + 1).toString().padStart(2, '0');
+        const year = d.getFullYear();
+        return `${day}/${month}/${year}`;
+    };
+    const postData = async () => {
         const postData = {
             post: post,
             location: location,
             cost: cost,
-            date:date,
+            date: formatDate(date),
+            author: id // Pass the id directly as a string
+        };
 
-
+        try {
+            await axios.post(`http://localhost:4011/user/${id}/post`, postData).then( response => navigateToUser(id));
+        } catch (error) {
+            setError('Some error occurred');
         }
-        await axios.post(`http://localhost:4011/user/:${id}/post`,postData).catch(error=>{setError('Some error occurred')})
+    };
 
-
-
-    }
-    const submitPost =(e) =>{
+    const submitPost = (e) => {
         e.preventDefault();
-        postData()
-        setCost('')
-        setLocation('')
-        setPost('')
-        setDate('')
-    }
+        postData();
+        setCost('');
+        setLocation('');
+        setPost('');
+        setDate('');
 
-return(
+    };
+
+
+    return(
 <>
     <section className='posting'>
 

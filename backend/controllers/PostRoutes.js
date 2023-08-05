@@ -8,9 +8,7 @@ const { Post } = require('../models/PostTravel');
 const { verifyUserJWT, decryptString } = require('./UserFunctions');
 const { User } = require('../models/UserModel');
 
-const {
-    getAllPosts, getPostById, getPostsByAuthor, createPost, updatePost, deletePost
-} = require('./PostFunctions');
+const {getAllPosts, getPostById, getPostsByAuthor, createPost, updatePost, deletePost} = require('./PostFunctions');
 // Make sure the JWT available in the headers is valid,
 // and refresh it to keep the JWT usable for longer.
 const verifyJwtHeader = async (request, response, next) => {
@@ -70,7 +68,7 @@ router.get('/', async (request, response) => {
 });
 
 // Show posts by specific user
-router.get('/author/:authorID', async (request, response) => {
+router.get('/posts/:authorID', async (request, response) => {
 
     let postsByAuthor = await getPostsByAuthor(request.params.authorID);
 
@@ -95,7 +93,7 @@ router.post('/user/:id/post', async (request, response) => {
         date: request.body.date,
        cost: request.body.cost,
         post: request.body.post,
-      userid:userid
+      author:userid
 
     }
     response.json(await createPost(postDetails));

@@ -7,12 +7,12 @@ import {UserPage} from "../UserPage/UserPage";
 export function LoginForm (props){
 
     const navigate = useNavigate();
-    const navigatetoRegister = ()=>{
+    const navigateToRegister = ()=>{
         //navigate to /register
         navigate('/register');
 
     }
-    const navigatetoUser = (id)=>{
+    const navigateToUser = (id)=>{
         //navigate to /register
         navigate(`/user/:${id}`);
 
@@ -55,15 +55,30 @@ export function LoginForm (props){
             localStorage.setItem('authenticated',true);
             localStorage.setItem('name',response.data.firstName);
             localStorage.setItem('id',response.data.id);
-            navigatetoUser(response.data.id)}).then().catch(error=>{console.log(error.message)})
+            navigateToUser(response.data.id)}).then().catch(error=>{console.log(error.message)})
 
     }
-const submitForm = (e) => {
+const submitForm = async (e) => {
         e.preventDefault();
-        postData();
-        setEnteredEmail('')
-    setEnteredPassword('')
-}
+    setError('');
+
+    try {
+        const postData = {
+            email: email,
+            password: password,
+        };
+
+        const response = await axios.post('http://localhost:4011/log-in', postData);
+        const { firstName, id } = response.data;
+
+        localStorage.setItem('authenticated', true);
+        localStorage.setItem('name', firstName);
+        localStorage.setItem('id', id);
+        navigateToUser(id);
+    } catch (error) {
+        setError('Some error occurred during login.');
+    }
+};
 const resetForm = () => {
         setEnteredEmail('');
     setEnteredPassword('');
@@ -86,7 +101,7 @@ const resetForm = () => {
                 <div className="buttons1">
                     <button type="submit" className="button-submit1">Log In</button>
                     <button type="reset" onClick={resetForm} className='button-reset1'>Reset</button>
-                    <button onClick={navigatetoRegister} className='button-register1'>Register</button>
+                    <button onClick={navigateToRegister} className='button-register1'>Register</button>
 
                 </div>
                 </fieldset>

@@ -150,7 +150,7 @@ router.delete('/:userID', async (request, response) => {
 });
 
 // List all users
-router.get('/', async (request, response) => {
+router.get('/users', async (request, response) => {
     let allUsers = await getAllUsers();
 
     response.json({
