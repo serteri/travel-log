@@ -203,7 +203,7 @@ The User stories set out below will hopefully illustrate for you some features o
 
 ## Testing
 
-Jest test files can be found for each compponent:
+Jest test files can be found for each compponent and can be run with ```NPM test``` command.
 - About.test.js
 - Error.test.js
 - Footer.test.js
