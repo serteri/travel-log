@@ -58,6 +58,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.6.2",
     "jest-css-modules": "^2.1.0",
+    "jsdom": "^22.1.0",
     "nodemon": "^3.0.1"
   }
 }
