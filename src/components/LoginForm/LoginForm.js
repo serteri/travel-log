@@ -69,7 +69,7 @@ const submitForm = async (e) => {
             password: password,
         };
 
-        const response = await axios.post('http://localhost:4011/log-in', postData);
+        const response = await axios.post(`${backendUrl}:4011/log-in`, postData);
         const { firstName, id } = response.data;
 
         localStorage.setItem('authenticated', true);
