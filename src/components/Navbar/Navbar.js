@@ -30,4 +30,4 @@ export function  NavBar (){
     )
 }
 
-module.exports = NavBar
+// module.exports = NavBar

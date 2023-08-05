@@ -21,4 +21,4 @@ export function Footer(){
 //     return x + y
 // }
 
-module.exports = { Footer }
+// module.exports = { Footer }
