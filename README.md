@@ -1,5 +1,5 @@
 # Travelog App
-Presentations:
+Part A Presentations:
 
 ## Serter Iyigunlu presentation:
 
@@ -200,3 +200,20 @@ The User stories set out below will hopefully illustrate for you some features o
 **Close to completion of part A:**  
 
 ![Trello Board](<src/images/Trello 4.png>)
+
+## Testing
+
+Jest test files can be found for each compponent:
+- About.test.js
+- Error.test.js
+- Footer.test.js
+- Homepage.test.js
+- LoginForm.test.js
+- Navbar.test.js
+- Postcard.test.js
+- PostTravel.test.js
+- Register.test.js
+- UserPage.test.js
+- App.test.js
+
+Client testing:
