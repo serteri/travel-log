@@ -24,7 +24,7 @@ export function RegisterPage(){
 
     const navigate = useNavigate();
 
-    const navigatetoLogin = ()=>{
+    const navigateToLogin = ()=>{
         //navigate to /login
         navigate('/login');
 
@@ -107,7 +107,7 @@ export function RegisterPage(){
             password:password,
             address:address
         }
-        await axios.post(`${backendUrl}/register-us`,postData).then(response => setMessage('Successfully Registered!')).then(res=>setFormSubmit(true)).then(response => navigatetoLogin).catch(error=>{setError('Some error occurred')})
+        await axios.post(`${backendUrl}/register-us`,postData).then(response => {setMessage('Successfully Registered!');setFormSubmit(true) ;navigateToLogin()}).catch(error=>{setError('Some error occurred')})
 
     }
 
