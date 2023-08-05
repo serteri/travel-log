@@ -27,7 +27,7 @@ app.use(helmet.contentSecurityPolicy({
 // array of origins for CORS configuration.
 const cors = require('cors');
 var corsOptions = {
-    origin:  '*',
+    origin:  'https://stunning-sprite-b13d9a.netlify.app',
     credentials: true,
     optionsSuccessStatus: 200
 }
