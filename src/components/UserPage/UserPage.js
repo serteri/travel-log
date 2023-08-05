@@ -1,15 +1,6 @@
 import {Routes,Route, useNavigate} from "react-router-dom";
 import React , {useState , useEffect} from 'react';
 import axios from "axios";
-import {
-    Routes,
-    Route,
-    useNavigate,
-    useParams,
-    useLocation,
-    useSearchParams,
-    useRouteLoaderData
-} from "react-router-dom";
 
 import './UserPage.css';
 

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import { UserPage } from './UserPage';  // Change this line
+import { UserPage } from './UserPage'; 
 
 describe('UserPage', () => {
   it('renders correctly and navigates on button click', () => {
