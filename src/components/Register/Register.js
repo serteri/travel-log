@@ -127,7 +127,7 @@ export function RegisterPage(){
 
         <div className="form-element">
 
-                <form className="login-form" >
+                <form className="login-form" onSubmit={registerForm}>
 
                     <fieldset name="Register">
                         <legend className='register'>Register</legend>
@@ -167,7 +167,7 @@ export function RegisterPage(){
                     </div>
                         <p className={passwordIsValid ? "valid" : "invalid"}>Please enter longer password</p>
                     <div className="buttons">
-                        <button type="submit" className="button-submit" onClick={registerForm}>Register</button>
+                        <button type="submit" className="button-submit" >Register</button>
                         <button type="reset" onClick={resetForm} className='button-reset'>Reset</button>
 
                     </div>

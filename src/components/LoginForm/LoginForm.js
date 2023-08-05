@@ -42,23 +42,23 @@ export function LoginForm (props){
         setEnteredPassword(e.target.value)
     }
 
-    const postData = async ()=>{
-
-        const postData = {
-            email:email,
-            password:password,
-
-
-        }
-        await axios.post(`${backendUrl}/log-in`,postData).then(response => {
-         setName(response.data.firstName);
-         setauthenticated(true)
-            localStorage.setItem('authenticated',true);
-            localStorage.setItem('name',response.data.firstName);
-            localStorage.setItem('id',response.data.id);
-            navigateToUser(response.data.id)}).then().catch(error=>{console.log(error.message)})
-
-    }
+    // const postData = async ()=>{
+    //
+    //     const postData = {
+    //         email:email,
+    //         password:password,
+    //
+    //
+    //     }
+    //     await axios.post(`${backendUrl}/log-in`,postData).then(response => {
+    //      setName(response.data.firstName);
+    //      setauthenticated(true)
+    //         localStorage.setItem('authenticated',true);
+    //         localStorage.setItem('name',response.data.firstName);
+    //         localStorage.setItem('id',response.data.id);
+    //         navigateToUser(response.data.id)}).then().catch(error=>{console.log(error.message)})
+    //
+    // }
 const submitForm = async (e) => {
         e.preventDefault();
     setError('');
@@ -69,7 +69,7 @@ const submitForm = async (e) => {
             password: password,
         };
 
-        const response = await axios.post(`${backendUrl}:4011/log-in`, postData);
+        const response = await axios.post(`${backendUrl}/log-in`, postData);
         const { firstName, id } = response.data;
 
         localStorage.setItem('authenticated', true);
