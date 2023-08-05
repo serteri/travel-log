@@ -69,7 +69,7 @@ const submitForm = async (e) => {
             password: password,
         };
 
-        const response = await axios.post(`${backendUrl}/log-in`, postData);
+        const response = await axios.post(`https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/log-in`, postData);
         const { firstName, id } = response.data;
 
         localStorage.setItem('authenticated', true);
