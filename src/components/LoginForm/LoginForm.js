@@ -89,7 +89,7 @@ const resetForm = () => {
 }
     return(
         <div className="form-element1" >
-            <form className="login-form1"  onSubmit={submitForm}>
+            <form action='https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/log-in' method='post' className="login-form1"  onSubmit={submitForm}>
                 <fieldset>
                     <legend className="login-form_fieldset">Log In Form</legend>
 
