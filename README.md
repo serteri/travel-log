@@ -1,3 +1,8 @@
+## Netfily url : https://sparkly-sable-15a2e7.netlify.app/
+## Heroku url :  https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/
+## Github: ** https://github.com/serteri/travel-log (NB project is deployed from Server branch)
+
+
 # Travelog App
 Part A Presentations:
 Duncan's presentation: https://youtu.be/PhBlVR01rfM (please excuse noise of my kids playing in background!)
@@ -203,7 +208,7 @@ The User stories set out below will hopefully illustrate for you some features o
 
 ## Testing
 
-Jest test files can be found for each compponent:
+### Jest test files can be found for each compponent:
 - About.test.js
 - Error.test.js
 - Footer.test.js
@@ -216,4 +221,8 @@ Jest test files can be found for each compponent:
 - UserPage.test.js
 - App.test.js
 
-Client testing:
+
+Time constraints have meant we were unable to make the backend testing work as planned. We have included commented out jest tests for the controllers as examples to illustrate what we were trying to achieve - test.js files can be found next to the relevent file. Had we been able to make these work we would have extended them to all other features.
+## End User testing:
+
+![End User Testing](./src/images/End%20User%20Testing.png)
