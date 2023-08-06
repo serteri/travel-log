@@ -1,6 +1,10 @@
 # Travelog App
 
+**URL:**
 https://sparkly-sable-15a2e7.netlify.app/
+
+**Github: ** https://github.com/serteri/travel-log
+(NB project is deployed from Server branch)
 
 
 ## R1: Description of your website, including purpose, functionality/features, target audience, tech stack. 
