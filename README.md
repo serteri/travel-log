@@ -1,9 +1,7 @@
 # Travelog App
-Part A Presentations:
 
-## Serter Iyigunlu presentation:
+https://sparkly-sable-15a2e7.netlify.app/
 
-I added my presentation : https://youtu.be/Ols0jTex2RE
 
 ## R1: Description of your website, including purpose, functionality/features, target audience, tech stack. 
 
@@ -216,4 +214,8 @@ Jest test files can be found for each compponent and can be run with ```NPM test
 - UserPage.test.js
 - App.test.js
 
-Time constraints have meant we were unable to make the backend testing work as planned. We have included commented out jest tests for the controllers to illustrate what we were trying to achieve - test.js files can be found next to the relevent file. Had we been able to make these work we would have extended 
+Time constraints have meant we were unable to make the backend testing work as planned. We have included commented out jest tests for the controllers as examples to illustrate what we were trying to achieve - test.js files can be found next to the relevent file. Had we been able to make these work we would have extended them to all other features.
+
+**End User Testing**
+
+![Screenshot of end user testing spreadsheet](<src/images/End User Testing.png>)
