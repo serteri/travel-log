@@ -3,8 +3,11 @@
 **URL:**
 https://sparkly-sable-15a2e7.netlify.app/
 
-**Github: ** https://github.com/serteri/travel-log
+**Heroku:**https://trevel-logapp-0ef19dc2f4ae.herokuapp.com/
+
+**Github:** https://github.com/serteri/travel-log
 (NB project is deployed from Server branch)
+
 
 
 ## R1: Description of your website, including purpose, functionality/features, target audience, tech stack. 
